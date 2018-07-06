@@ -267,7 +267,7 @@
 #
 # @param dbms_active_database [String] Name of the database to load.
 #
-# @param dbms_allow_format_migration [Boolean] Whether to allow a store upgrade
+# @param dbms_allow_upgrade [Boolean] Whether to allow a store upgrade
 #   in case the current version of the database starts against an older store
 #   version.
 #
@@ -927,7 +927,7 @@ class neo4j (
 
   ### config general variables
   $dbms_active_database                                              = $::neo4j::params::dbms_active_database,
-  $dbms_allow_format_migration                                       = $::neo4j::params::dbms_allow_format_migration,
+  $dbms_allow_upgrade                                                = $::neo4j::params::dbms_allow_upgrade,
   $dbms_checkpoint_interval_time                                     = $::neo4j::params::dbms_checkpoint_interval_time,
   $dbms_checkpoint_interval_tx                                       = $::neo4j::params::dbms_checkpoint_interval_tx,
   $dbms_checkpoint_iops_limit                                        = $::neo4j::params::dbms_checkpoint_iops_limit,
@@ -974,10 +974,6 @@ class neo4j (
   $dbms_tx_log_rotation_size                                         = $::neo4j::params::dbms_tx_log_rotation_size,
   $dbms_udc_enabled                                                  = $::neo4j::params::dbms_udc_enabled,
   $dbms_unmanaged_extension_classes                                  = $::neo4j::params::dbms_unmanaged_extension_classes,
-  $tools_consistency_checker_check_graph                             = $::neo4j::params::tools_consistency_checker_check_graph,
-  $tools_consistency_checker_check_indexes                           = $::neo4j::params::tools_consistency_checker_check_indexes,
-  $tools_consistency_checker_check_label_scan_store                  = $::neo4j::params::tools_consistency_checker_check_label_scan_store,
-  $tools_consistency_checker_check_property_owners                   = $::neo4j::params::tools_consistency_checker_check_property_owners,
 
   ### config backup variables
   $dbms_backup_address                                               = $::neo4j::params::dbms_backup_address,
@@ -1206,7 +1202,7 @@ class neo4j (
     $causal_clustering_raft_messages_log_enable,
     $cypher_forbid_exhaustive_shortestpath,
     $cypher_hints_error,
-    $dbms_allow_format_migration,
+    $dbms_allow_upgrade,
     $dbms_backup_enabled,
     $dbms_connector_bolt_enabled,
     $dbms_connector_http_enabled,
@@ -1254,10 +1250,6 @@ class neo4j (
     $metrics_neo4j_server_enabled,
     $metrics_neo4j_tx_enabled,
     $service_enable,
-    $tools_consistency_checker_check_graph,
-    $tools_consistency_checker_check_indexes,
-    $tools_consistency_checker_check_label_scan_store,
-    $tools_consistency_checker_check_property_owners,
     $unsupported_dbms_security_ldap_authorization_connection_pooling,
   )
 

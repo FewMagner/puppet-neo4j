@@ -67,7 +67,7 @@ class neo4j::config (
   $cypher_planner                                     = $::neo4j::cypher_planner
   $cypher_statistics_divergence_threshold             = $::neo4j::cypher_statistics_divergence_threshold
   $dbms_active_database                               = $::neo4j::dbms_active_database
-  $dbms_allow_format_migration                        = $::neo4j::dbms_allow_format_migration
+  $dbms_allow_upgrade                                 = $::neo4j::dbms_allow_upgrade
   $dbms_checkpoint_interval_time                      = $::neo4j::dbms_checkpoint_interval_time
   $dbms_checkpoint_interval_tx                        = $::neo4j::dbms_checkpoint_interval_tx
   $dbms_checkpoint_iops_limit                         = $::neo4j::dbms_checkpoint_iops_limit
@@ -131,10 +131,6 @@ class neo4j::config (
   $dbms_tx_log_rotation_size                          = $::neo4j::dbms_tx_log_rotation_size
   $dbms_udc_enabled                                   = $::neo4j::dbms_udc_enabled
   $dbms_unmanaged_extension_classes                   = $::neo4j::dbms_unmanaged_extension_classes
-  $tools_consistency_checker_check_graph              = $::neo4j::tools_consistency_checker_check_graph
-  $tools_consistency_checker_check_indexes            = $::neo4j::tools_consistency_checker_check_indexes
-  $tools_consistency_checker_check_label_scan_store   = $::neo4j::tools_consistency_checker_check_label_scan_store
-  $tools_consistency_checker_check_property_owners    = $::neo4j::tools_consistency_checker_check_property_owners
   concat::fragment{ 'neo4j config general':
     target  => $config_file,
     content => template('neo4j/configuration/neo4j.conf.general.erb'),

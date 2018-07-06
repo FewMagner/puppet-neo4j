@@ -7,7 +7,7 @@ dbms.active_database=<%= @dbms_active_database %>
 
 # Whether to allow a store upgrade in case the current version of the database
 # starts against an older store version.
-dbms.allow_format_migration=<%= @dbms_allow_format_migration %>
+dbms.allow_upgrade=<%= @dbms_allow_upgrade %>
 
 # Configure the operating mode of the database — 
 #   'SINGLE' for stand-alone operation,
@@ -112,9 +112,6 @@ cypher.statistics_divergence_threshold=<%= @cypher_statistics_divergence_thresho
 #-------------------------------------------------------------------------------
 # Enable or disable background index sampling.
 dbms.index_sampling.background_enabled=<%= @dbms_index_sampling_background_enabled %>
-
-# Size of buffer used by index sampling
-dbms.index_sampling.buffer_size=<%= @dbms_index_sampling_buffer_size %>
 
 # Index sampling chunk size limit.
 dbms.index_sampling.sample_size_limit=<%= @dbms_index_sampling_sample_size_limit %>
@@ -286,21 +283,6 @@ dbms.shell.read_only=<%= @dbms_shell_read_only %>
 
 # The name of the shell.
 dbms.shell.rmi_name=<%= @dbms_shell_rmi_name %>
-
-#-------------------------------------------------------------------------------
-# Tools
-#-------------------------------------------------------------------------------
-# Perform checks between nodes, relationships, properties, types and tokens.
-tools.consistency_checker.check_graph=<%= @tools_consistency_checker_check_graph %>
-
-# Perform checks on indexes.
-tools.consistency_checker.check_indexes=<%= @tools_consistency_checker_check_indexes %>
-
-# Perform checks on the label scan store.
-tools.consistency_checker.check_label_scan_store=<%= @tools_consistency_checker_check_label_scan_store %>
-
-# Perform optional additional checking on property ownership.
-tools.consistency_checker.check_property_owners=<%= @tools_consistency_checker_check_property_owners %>
 
 #-------------------------------------------------------------------------------
 # UDC

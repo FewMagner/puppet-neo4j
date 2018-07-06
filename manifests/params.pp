@@ -68,7 +68,7 @@ class neo4j::params {
   $cypher_statistics_divergence_threshold                            = 0.75
   $data_prefix                                                       = '/var/lib/neo4j'
   $dbms_active_database                                              = 'graph.db'
-  $dbms_allow_format_migration                                       = false
+  $dbms_allow_upgrade                                                = false
   $dbms_backup_address                                               = '127.0.0.1:6362'
   $dbms_backup_enabled                                               = true
   $dbms_checkpoint_interval_time                                     = '300000'
@@ -249,10 +249,6 @@ class neo4j::params {
   $service_name                                                      = 'neo4j'
   $service_ulimit                                                    = 60000
   $service_shutdown_timeout                                          = 120
-  $tools_consistency_checker_check_graph                             = true
-  $tools_consistency_checker_check_indexes                           = true
-  $tools_consistency_checker_check_label_scan_store                  = true
-  $tools_consistency_checker_check_property_owners                   = false
   $unsupported_dbms_security_ldap_authorization_connection_pooling   = true
   $user                                                              = 'neo4j'
 
