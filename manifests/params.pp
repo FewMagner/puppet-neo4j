@@ -68,7 +68,7 @@ class neo4j::params {
   $cypher_statistics_divergence_threshold                            = 0.75
   $data_prefix                                                       = '/var/lib/neo4j'
   $dbms_active_database                                              = 'graph.db'
-  $dbms_allow_upgrade                                                = false
+  $dbms_allow_upgrade                                                = true
   $dbms_backup_address                                               = '127.0.0.1:6362'
   $dbms_backup_enabled                                               = true
   $dbms_checkpoint_interval_time                                     = '300000'
